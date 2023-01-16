@@ -1,0 +1,112 @@
+@use "components";
+@mixin section-display{
+	max-width: 768px;
+	margin: auto;
+	padding:3rem;
+}
+*{
+	padding:0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.nav{
+	display: flex;
+	align-items:center;
+	text-align: center;
+	padding:0.5rem 0;
+	justify-content: space-around;
+	width: 100%;
+	border-bottom:1px solid #ccc;
+}
+.sec-home{
+	display: flex;
+	align-items:center;
+	@include section-display();
+	
+	.home-cta{
+		flex: 1;
+		.cta-text{
+			color: $color-main;
+		}
+		.home-description{
+			width: 300px;
+		}
+	}
+}
+
+.sec-features{
+	@include section-display();
+	.intro{
+		text-align: center;
+	}
+
+
+}
+.sec-benefits{
+	
+	border-top:1px solid #ccc;
+	padding:5rem;
+	.intro{
+		text-align: center;
+		@extend .sec-features;
+	}
+	
+}
+.sec-kpis{
+	background-color: $color-main;
+	color: $white;
+	width: 100%;
+	margin: 0;
+	padding:2rem ;
+	.kpi{
+		display: flex;
+		flex-direction: column;
+		align-items:center;
+		.number{
+			font-size: 2rem;
+		}
+	}
+}
+
+.sec-onboarding{
+	@include section-display();
+	margin-bottom: 2rem;
+	.intro{
+		@extend .sec-features, .intro;
+		text-align: center;
+		p{
+			color: $color-gray;
+		}
+	}
+	.steps{
+		display: flex;
+		align-items:center;
+		justify-content: space-around;
+		text-align: center;
+		h4{
+			font-size: 1rem;
+			padding:0.5rem 0;
+		}
+	}
+}
+
+.sec-footer-cta{
+	background-color: $color-footer;
+	padding:1.5rem;
+	
+	background-image:url("../assets/bg.png");
+	background-repeat:no-repeat;
+	background-position:100%;
+	.footer-cta{
+		width: 50%;
+		.cta-title{
+			font-size: 2rem;
+		}
+		.cta-description{
+			font-size: 1rem;
+			color: $color-gray;
+		}
+	}
+	
+}
